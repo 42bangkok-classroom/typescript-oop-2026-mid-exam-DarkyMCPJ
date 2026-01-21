@@ -4,11 +4,28 @@ interface Person {
   age?: number;
 }
 
-function sortPersons(persons: Person[]): Person[]{
- return [...persons] 
-  .sort()
-  
+interface ValidPerson {
+  firstName: string;
+  lastName: string;
+  age: number;
 }
+
+export function sortPersons(persons: Person[]): Person[] {
+  return (persons.filter(p => 
+    p.firstName && 
+    p.lastName && 
+    p.age !== undefined && 
+    p.age >= 0 && 
+    p.age <= 100
+  ) as ValidPerson[])
+  .sort((a, b) => 
+    a.age - b.age || 
+    a.firstName.localeCompare(b.firstName) || 
+    a.lastName.localeCompare(b.lastName)
+  );
+}
+  
+
 
 const persons: Person[] = [
   { firstName: "Somchai", lastName: "Jaidee", age: 30 },
@@ -22,4 +39,3 @@ const persons: Person[] = [
 
 console.log(sortPersons(persons));
 
-//Test
