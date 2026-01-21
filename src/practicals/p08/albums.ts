@@ -11,7 +11,7 @@ function mapPhotoToAlbum(userIds?: number[]): Promise<FullAlbum[]>
 
 
 
-/*{
+{
   return fetch(ALBUMS_URL)
     .then((res) => res.json())
     .then((albums) => {
@@ -30,6 +30,5 @@ function mapPhotoToAlbum(userIds?: number[]): Promise<FullAlbum[]>
           });
         });
     });
-}*/
+}
 
-//test
