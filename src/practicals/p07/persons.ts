@@ -21,3 +21,5 @@ const persons: Person[] = [
 ];
 
 console.log(sortPersons(persons));
+
+//Test

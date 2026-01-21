@@ -12,3 +12,5 @@ console.log("D");
 else if(score < 50 && score >= 0)  
 console.log("F");
 else  console.log("Invalid input");
+
+//test

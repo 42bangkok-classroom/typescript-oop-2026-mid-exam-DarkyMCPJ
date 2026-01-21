@@ -8,3 +8,5 @@ function shortenComment(comment: string): string {
     return comment.slice(0, 10) + "...";
   }
 }
+
+// Test
