@@ -10,19 +10,18 @@ interface ValidPerson {
   age: number;
 }
 
+function isValidPerson(p: Person): p is ValidPerson {
+  return !!(p.firstName && p.lastName && p.age !== undefined && p.age >= 0 && p.age <= 100);
+}
+
 export function sortPersons(persons: Person[]): Person[] {
-  return (persons.filter(p => 
-    p.firstName && 
-    p.lastName && 
-    p.age !== undefined && 
-    p.age >= 0 && 
-    p.age <= 100
-  ) as ValidPerson[])
-  .sort((a, b) => 
-    a.age - b.age || 
-    a.firstName.localeCompare(b.firstName) || 
-    a.lastName.localeCompare(b.lastName)
-  );
+  return persons
+    .filter(isValidPerson) 
+    .sort((a, b) => 
+      a.age - b.age || 
+      a.firstName.localeCompare(b.firstName) || 
+      a.lastName.localeCompare(b.lastName)
+    );
 }
   
 
