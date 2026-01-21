@@ -4,8 +4,11 @@ interface Person {
   age?: number;
 }
 
-function sortPersons(persons: Person[]): Person[] {}
-
+function sortPersons(persons: Person[]): Person[]{
+ return [...persons] 
+  .sort()
+  
+}
 
 const persons: Person[] = [
   { firstName: "Somchai", lastName: "Jaidee", age: 30 },
@@ -16,3 +19,5 @@ const persons: Person[] = [
   { firstName: "Jane", lastName: "Smith", age: -5 },
   { lastName: "NoName", age: 40 }
 ];
+
+console.log(sortPersons(persons));
