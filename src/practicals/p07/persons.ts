@@ -1,10 +1,10 @@
-interface Person {
+export interface Person {
   firstName?: string;
   lastName?: string;
   age?: number;
 }
 
-interface ValidPerson {
+export interface ValidPerson {
   firstName: string;
   lastName: string;
   age: number;
