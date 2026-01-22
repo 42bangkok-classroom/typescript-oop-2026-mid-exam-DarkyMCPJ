@@ -1,6 +1,5 @@
 const size = Number(process.argv[2]);
 if (isNaN(size) || size <= 0) {
-  console.log("Please provide a positive number.");
 }
 
 for (let i = 1; i <= size; i++) {
